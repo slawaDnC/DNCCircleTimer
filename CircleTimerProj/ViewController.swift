@@ -31,6 +31,11 @@ class ViewController: UIViewController {
             $0.top.equalTo(timerView.snp.bottom).offset(50)
             $0.leading.trailing.equalToSuperview().inset(30)
         }
+
+        timerView.onTimerEnded = {
+            debugPrint("timer ended")
+        }
+        timerView.startTimer(initialValue: 5)
     }
 
     @objc private func sliderValueChanged(_ sender: UISlider) {

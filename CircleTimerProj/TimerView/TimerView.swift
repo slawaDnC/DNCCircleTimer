@@ -11,8 +11,11 @@ import SnapKit
 private typealias View = TimerView
 
 class TimerView: UIView {
+    private enum Constants {
+        static let timerInterval: TimeInterval = 1
+    }
     // MARK: - Configuration
-    
+
     struct Configuration {
         let font: UIFont
         let textColor: UIColor
@@ -31,7 +34,6 @@ class TimerView: UIView {
         $0.textAlignment = .center
         $0.font = .systemFont(ofSize: 20, weight: .medium)
         $0.numberOfLines = 1
-        $0.text = "10"
     }
 
     // MARK: - Public Properties
@@ -45,9 +47,13 @@ class TimerView: UIView {
         }
     }
 
+    var onTimerEnded: VoidClosure = { }
+
     // MARK: - Private Properties
 
     private var configuration: Configuration?
+    private var timer: Timer?
+    private var timerValue: Int = .zero
 
     // MARK: - Inits
 
@@ -69,6 +75,11 @@ class TimerView: UIView {
         setup()
     }
 
+    deinit {
+        timer?.invalidate()
+        timer = nil
+    }
+
     func apply(_ configuration: Configuration) {
         self.configuration = configuration
 
@@ -77,6 +88,17 @@ class TimerView: UIView {
         loadingView.apply(configuration.loadingConfiguration)
 
         setNeedsDisplay()
+    }
+
+    func startTimer(initialValue: Int) {
+        self.timerValue = initialValue
+        countLabel.text = "\(initialValue)"
+        self.timer = Timer.scheduledTimer(
+            timeInterval: Constants.timerInterval,
+            target: self,
+            selector: #selector(timerAction),
+            userInfo: nil,
+            repeats: true)
     }
 }
 
@@ -99,6 +121,20 @@ private extension View {
         }
         countLabel.snp.makeConstraints {
             $0.edges.equalToSuperview()
+        }
+    }
+
+    func buildLoadingProgressValue(time: Int) {
+        let progress = time / 1000
+    }
+
+    @objc func timerAction() {
+        timerValue -= Int(Constants.timerInterval)
+        countLabel.text = "\(timerValue)"
+        guard timerValue > .zero else {
+            timer?.invalidate()
+            onTimerEnded()
+            return
         }
     }
 }
