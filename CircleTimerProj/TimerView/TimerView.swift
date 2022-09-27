@@ -38,15 +38,6 @@ class TimerView: UIView {
 
     // MARK: - Public Properties
 
-    var progress: CGFloat {
-        get {
-            loadingView.progress
-        }
-        set {
-            loadingView.progress = newValue
-        }
-    }
-
     var onTimerEnded: VoidClosure = { }
 
     // MARK: - Private Properties
@@ -54,6 +45,7 @@ class TimerView: UIView {
     private var configuration: Configuration?
     private var timer: Timer?
     private var timerValue: Int = .zero
+    private var loadingInterval: CGFloat = .zero
 
     // MARK: - Inits
 
@@ -90,11 +82,32 @@ class TimerView: UIView {
         setNeedsDisplay()
     }
 
-    func startTimer(initialValue: Int) {
+    func startTimer(
+        initialValue: Int,
+        timeInterval: TimeInterval = Constants.timerInterval
+    ) {
         self.timerValue = initialValue
+        self.loadingInterval = 1 / CGFloat(initialValue)
+
         countLabel.text = "\(initialValue)"
+        loadingView.progress = 1
+
         self.timer = Timer.scheduledTimer(
             timeInterval: Constants.timerInterval,
+            target: self,
+            selector: #selector(timerAction),
+            userInfo: nil,
+            repeats: true)
+    }
+
+    func addAccelerationToTimer(with multiplier: Double) {
+        guard let timeInterval = timer?.timeInterval else { return }
+
+        let multipliedInterval = timeInterval * multiplier
+        timer?.invalidate()
+
+        self.timer = Timer.scheduledTimer(
+            timeInterval: multipliedInterval,
             target: self,
             selector: #selector(timerAction),
             userInfo: nil,
@@ -124,17 +137,14 @@ private extension View {
         }
     }
 
-    func buildLoadingProgressValue(time: Int) {
-        let progress = time / 1000
-    }
-
     @objc func timerAction() {
         timerValue -= Int(Constants.timerInterval)
+
         countLabel.text = "\(timerValue)"
-        guard timerValue > .zero else {
+        loadingView.progress -= loadingInterval
+        if timerValue == .zero {
             timer?.invalidate()
             onTimerEnded()
-            return
         }
     }
 }
