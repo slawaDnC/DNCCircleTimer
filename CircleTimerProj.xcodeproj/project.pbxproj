@@ -7,20 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7827EB7A28E2FC3800B06770 /* Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7827EB7928E2FC3800B06770 /* Build.swift */; };
+		7827EB7E28E2FC7600B06770 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7827EB7D28E2FC7600B06770 /* TimerView.swift */; };
+		7827EB8128E2FF6200B06770 /* TimerLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7827EB8028E2FF6200B06770 /* TimerLoadingView.swift */; };
 		7861A65128E2F93C00E1B48B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7861A65028E2F93C00E1B48B /* AppDelegate.swift */; };
 		7861A65328E2F93C00E1B48B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7861A65228E2F93C00E1B48B /* SceneDelegate.swift */; };
 		7861A65528E2F93C00E1B48B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7861A65428E2F93C00E1B48B /* ViewController.swift */; };
-		7861A65828E2F93C00E1B48B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7861A65628E2F93C00E1B48B /* Main.storyboard */; };
 		7861A65A28E2F93D00E1B48B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7861A65928E2F93D00E1B48B /* Assets.xcassets */; };
 		7861A65D28E2F93D00E1B48B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7861A65B28E2F93D00E1B48B /* LaunchScreen.storyboard */; };
+		7861A66628E2FA9100E1B48B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7861A66528E2FA9100E1B48B /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7827EB7928E2FC3800B06770 /* Build.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Build.swift; sourceTree = "<group>"; };
+		7827EB7D28E2FC7600B06770 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		7827EB8028E2FF6200B06770 /* TimerLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerLoadingView.swift; sourceTree = "<group>"; };
 		7861A64D28E2F93C00E1B48B /* CircleTimerProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircleTimerProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7861A65028E2F93C00E1B48B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7861A65228E2F93C00E1B48B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7861A65428E2F93C00E1B48B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7861A65728E2F93C00E1B48B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7861A65928E2F93D00E1B48B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7861A65C28E2F93D00E1B48B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7861A65E28E2F93D00E1B48B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -31,12 +36,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7861A66628E2FA9100E1B48B /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7827EB7B28E2FC5000B06770 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				7861A65028E2F93C00E1B48B /* AppDelegate.swift */,
+				7861A65228E2F93C00E1B48B /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		7827EB7C28E2FC5900B06770 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7827EB7928E2FC3800B06770 /* Build.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		7827EB8228E2FF6700B06770 /* TimerView */ = {
+			isa = PBXGroup;
+			children = (
+				7827EB7D28E2FC7600B06770 /* TimerView.swift */,
+				7827EB8028E2FF6200B06770 /* TimerLoadingView.swift */,
+			);
+			path = TimerView;
+			sourceTree = "<group>";
+		};
 		7861A64428E2F93C00E1B48B = {
 			isa = PBXGroup;
 			children = (
@@ -56,10 +88,10 @@
 		7861A64F28E2F93C00E1B48B /* CircleTimerProj */ = {
 			isa = PBXGroup;
 			children = (
-				7861A65028E2F93C00E1B48B /* AppDelegate.swift */,
-				7861A65228E2F93C00E1B48B /* SceneDelegate.swift */,
+				7827EB7C28E2FC5900B06770 /* Utils */,
+				7827EB7B28E2FC5000B06770 /* AppDelegate */,
+				7827EB8228E2FF6700B06770 /* TimerView */,
 				7861A65428E2F93C00E1B48B /* ViewController.swift */,
-				7861A65628E2F93C00E1B48B /* Main.storyboard */,
 				7861A65928E2F93D00E1B48B /* Assets.xcassets */,
 				7861A65B28E2F93D00E1B48B /* LaunchScreen.storyboard */,
 				7861A65E28E2F93D00E1B48B /* Info.plist */,
@@ -77,12 +109,16 @@
 				7861A64928E2F93C00E1B48B /* Sources */,
 				7861A64A28E2F93C00E1B48B /* Frameworks */,
 				7861A64B28E2F93C00E1B48B /* Resources */,
+				7827EB7F28E2FD4400B06770 /* SwiftLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = CircleTimerProj;
+			packageProductDependencies = (
+				7861A66528E2FA9100E1B48B /* SnapKit */,
+			);
 			productName = CircleTimerProj;
 			productReference = 7861A64D28E2F93C00E1B48B /* CircleTimerProj.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +147,9 @@
 				Base,
 			);
 			mainGroup = 7861A64428E2F93C00E1B48B;
+			packageReferences = (
+				7861A66428E2FA9100E1B48B /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 7861A64E28E2F93C00E1B48B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,19 +166,42 @@
 			files = (
 				7861A65D28E2F93D00E1B48B /* LaunchScreen.storyboard in Resources */,
 				7861A65A28E2F93D00E1B48B /* Assets.xcassets in Resources */,
-				7861A65828E2F93C00E1B48B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7827EB7F28E2FD4400B06770 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint lint --quiet\nelse\n    echo \"error: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7861A64928E2F93C00E1B48B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7827EB7E28E2FC7600B06770 /* TimerView.swift in Sources */,
 				7861A65528E2F93C00E1B48B /* ViewController.swift in Sources */,
 				7861A65128E2F93C00E1B48B /* AppDelegate.swift in Sources */,
+				7827EB8128E2FF6200B06770 /* TimerLoadingView.swift in Sources */,
+				7827EB7A28E2FC3800B06770 /* Build.swift in Sources */,
 				7861A65328E2F93C00E1B48B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +209,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7861A65628E2F93C00E1B48B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7861A65728E2F93C00E1B48B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7861A65B28E2F93D00E1B48B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -291,10 +345,10 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CircleTimerProj/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -319,10 +373,10 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CircleTimerProj/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -358,6 +412,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7861A66428E2FA9100E1B48B /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = exactVersion;
+				version = 5.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7861A66528E2FA9100E1B48B /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7861A66428E2FA9100E1B48B /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7861A64528E2F93C00E1B48B /* Project object */;
 }
